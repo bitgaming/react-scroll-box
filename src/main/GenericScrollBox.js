@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import {findDOMNode} from 'react-dom';
 
-const {element, number, bool, func, oneOf, any, object, node} = React.PropTypes;
+const {element, number, bool, func, oneOf, any, object, node} = PropTypes;
 
 function isCoordinate(value) {
   return value != null && !isNaN(value);
@@ -411,9 +412,9 @@ export class GenericScrollBox extends React.Component {
         y: _targetY + dy
       });
     };
-    
+
     this.scrollByX = (dx, options = {}) => this.scrollBy({...options, dx});
-    
+
     this.scrollByY = (dy, options = {}) => this.scrollBy({...options, dy});
 
     this.scrollToPage = ({
